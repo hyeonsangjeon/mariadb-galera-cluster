@@ -21,8 +21,8 @@ services:
       --wait_timeout=28800
       --character-set-server=utf8
       --collation-server=utf8_general_ci
-      --max-allowed-packet=1073741824
-      --net-buffer-length=1048576
+      --max-allowed-packet=512M
+      --net-buffer-length=5048576
       --wsrep-new-cluster
     stdin_open: true
     tty: true
@@ -41,7 +41,6 @@ services:
       - node1-mariadb
     environment:
       REPLICATION_PASSWORD: 'iamgroot'
-#      MYSQL_ROOT_PASSWORD: 'iamgroot'
       GALERA: 'On'
       NODE_NAME: node2-mariadb
       CLUSTER_NAME: maria_cluster
@@ -55,8 +54,8 @@ services:
       --wait_timeout=28800
       --character-set-server=utf8
       --collation-server=utf8_general_ci
-      --max-allowed-packet=1073741824
-      --net-buffer-length=1048576
+      --max-allowed-packet=512M
+      --net-buffer-length=5048576
     stdin_open: true
     tty: true
     privileged: true
@@ -75,7 +74,6 @@ services:
       - node1-mariadb
     environment:
       REPLICATION_PASSWORD: 'iamgroot'
-#      MYSQL_ROOT_PASSWORD: 'iamgroot'
       GALERA: 'On'
       NODE_NAME: node3-mariadb
       CLUSTER_NAME: maria_cluster
@@ -89,8 +87,8 @@ services:
       --wait_timeout=28800
       --character-set-server=utf8
       --collation-server=utf8_general_ci
-      --max-allowed-packet=1073741824
-      --net-buffer-length=1048576
+      --max-allowed-packet=512M
+      --net-buffer-length=5048576
     stdin_open: true
     tty: true
     privileged: true
